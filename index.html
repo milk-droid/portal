@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +20,8 @@
     
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     
     body {
@@ -28,6 +31,8 @@
       color: var(--primary-black);
       background-color: var(--primary-white);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     
     .container {
@@ -37,7 +42,7 @@
     }
     
     h1, h2, h3, h4, h5 {
-      font-family: 'Syne', 'Bright Retro', serif;
+      font-family: 'Bright Retro', 'Syne', serif;
       font-weight: 800;
       margin-top: 2rem;
       margin-bottom: 1rem;
@@ -46,7 +51,7 @@
     h1 {
       font-size: 4.5rem;
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1rem;
       letter-spacing: -0.02em;
     }
     
@@ -79,7 +84,7 @@
       background-color: var(--deep-purple);
       color: var(--primary-white);
       text-align: center;
-      padding: 6rem 0;
+      padding: 4rem 0;
       position: relative;
       overflow: hidden;
     }
@@ -100,6 +105,16 @@
       right: 0;
       bottom: 0;
       z-index: 1;
+    }
+    
+    /* Context Note */
+    .context-note {
+      text-align: center;
+      font-style: italic;
+      color: var(--deep-purple);
+      border-bottom: 1px solid var(--deep-purple);
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
     }
     
     /* Logo Display */
@@ -123,13 +138,11 @@
       background-color: var(--primary-black);
       height: 200px;
       margin-bottom: 1rem;
-      border-radius: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      position: relative;
       overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
     
     .logo-caption {
@@ -155,7 +168,6 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      border-radius: 0;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     
@@ -167,7 +179,6 @@
     .color-hex {
       background-color: rgba(255,255,255,0.8);
       padding: 0.3rem 0.6rem;
-      border-radius: 0;
       font-size: 0.8rem;
       margin-bottom: 0.5rem;
       font-family: monospace;
@@ -179,7 +190,6 @@
       padding: 3rem;
       background-color: var(--primary-black);
       color: var(--primary-white);
-      border-radius: 0;
     }
     
     .font-display {
@@ -217,7 +227,6 @@
       min-width: 300px;
       height: 300px;
       background-color: var(--primary-black);
-      border-radius: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -241,6 +250,7 @@
       border: none;
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      background-color: var(--primary-black);
     }
     
     .application-img {
@@ -249,7 +259,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
     }
     
     .application-caption {
@@ -263,36 +272,48 @@
     }
     
     /* Process Section */
-    .process {
-      margin: 6rem 0;
+    .skills-highlight {
+      margin: 6rem 0 0;
       padding: 4rem 2rem;
       background-color: var(--deep-purple);
       color: white;
     }
     
-    .process h2::after {
+    .skills-highlight h2::after {
       background-color: var(--gold);
     }
-    
-    /* Footer */
-    .footer {
+
+    /* Reflection Section */
+    .reflection {
+      margin: 6rem 0;
+      padding: 3rem;
       background-color: var(--primary-black);
       color: var(--primary-white);
-      text-align: center;
-      padding: 5rem 0;
-      margin-top: 6rem;
+      border-top: 4px solid var(--coral);
     }
     
-    .footer h2::after {
+    .reflection h2::after {
       background-color: var(--gold);
     }
     
-    .contact-info {
+    .reflection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
       margin-top: 2rem;
     }
     
-    .contact-info p {
-      margin: 0.5rem 0;
+    .reflection-item {
+      border-left: 3px solid var(--gold);
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .reflection-title {
+      font-weight: bold;
+      color: var(--coral);
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
     }
     
     /* Star animation */
@@ -305,60 +326,6 @@
       opacity: 0.7;
     }
 
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 3rem;
-      }
-      
-      h2 {
-        font-size: 2.2rem;
-      }
-      
-      .case-study-section {
-        flex-direction: column;
-      }
-      
-      .section-image {
-        order: -1;
-      }
-    }
-
-    /* Portal effect styles */
-    .portal-effect {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(255,255,255,0.8) 71%, rgba(0,0,0,1) 73%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      box-shadow: 0 0 40px rgba(213, 181, 110, 0.4);
-    }
-
-    .portal-figure {
-      width: 40px;
-      height: 80px;
-      background-color: white;
-      position: relative;
-    }
-
-    .portal-figure::before {
-      content: '';
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background-color: white;
-      border-radius: 50%;
-      top: -25px;
-      left: 5px;
-    }
-    
     /* Gold star accents */
     .star-accent {
       position: absolute;
@@ -378,39 +345,234 @@
       clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     }
     
-    /* Course project banner */
-    .project-banner {
-      background-color: var(--coral);
-      color: var(--primary-white);
+    .component-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .component-icon {
+      margin-right: 1rem;
+    }
+    
+    .component-text {
+      font-size: 1.1rem;
+    }
+    
+    .mission-quote {
+      font-style: italic;
+      border-left: 4px solid var(--coral);
+      padding-left: 1.5rem;
+      margin: 2rem 0 3rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    .moodboard {
+      margin: 4rem 0;
       text-align: center;
-      padding: 1rem;
+    }
+    
+    .moodboard-image {
+      width: 100%;
+      max-height: 600px;
+      background-color: var(--primary-black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .skill-item {
+      border-left: 3px solid var(--gold);
+      padding-left: 1rem;
+    }
+    
+    .skill-title {
       font-weight: bold;
-      letter-spacing: 0.05em;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Enhanced mobile optimizations */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+      
+      .container {
+        padding: 1.5rem;
+      }
+      
+      .case-study-section {
+        flex-direction: column;
+        margin: 4rem 0;
+        gap: 2rem;
+      }
+      
+      .section-image {
+        order: -1;
+        height: 250px;
+        width: 100%;
+      }
+      
+      .color-palette {
+        justify-content: center;
+      }
+      
+      .color-info {
+        margin: 0 1rem 2rem;
+      }
+      
+      .logo-item {
+        flex: 1 1 100%;
+        min-width: 250px;
+      }
+      
+      .logo-container {
+        gap: 1rem;
+      }
+      
+      .application-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .typography {
+        padding: 1.5rem;
+        margin: 2rem 0;
+      }
+      
+      .font-sample {
+        font-size: 1.8rem;
+      }
+      
+      .skills-highlight {
+        padding: 2rem 1.5rem;
+        margin: 4rem 0 0;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .moodboard-image {
+        max-height: 450px;
+      }
+
+      .reflection {
+        padding: 1.5rem;
+        margin: 4rem 0;
+      }
+      
+      .reflection-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .header {
+        padding: 3rem 0 2rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.8rem;
+      }
+      
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      
+      .container {
+        padding: 1rem;
+      }
+      
+      .mission-quote {
+        padding-left: 1rem;
+        margin: 1.5rem 0 2rem;
+        font-size: 0.9rem;
+      }
+      
+      .logo-img {
+        height: 180px;
+      }
+      
+      .color-block {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .font-sample {
+        font-size: 1.5rem;
+      }
+      
+      .section-image {
+        height: 200px;
+      }
+      
+      .application-img {
+        height: 200px;
+      }
+      
+      .skill-title {
+        font-size: 1.1rem;
+      }
+
+      .reflection-title {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="project-banner">
-    HYPOTHETICAL COURSE PROJECT — BRAND IDENTITY DESIGN
-  </div>
-
   <div class="header">
     <div class="header-stars" id="stars-container"></div>
     <div class="header-content">
-      <h1>PORTAL™</h1>
-      <p>The First Teleportation Device</p>
-      <div class="portal-effect">
-        <div class="portal-figure"></div>
+      <div class="logo-header">
+        <img src="/api/placeholder/400/150" alt="PORTAL™ Logo" style="max-width: 100%; height: auto;"/>
       </div>
+      <p>Brand Identity Design</p>
     </div>
   </div>
 
   <div class="container">
+    <section class="project-context">
+      <p class="context-note">A hypothetical branding project created for Visual Design Principles class</p>
+    </section>
+    
     <section class="project-overview">
       <h2>Project Brief</h2>
-      <p>This course project challenged me to develop a comprehensive brand identity for Portal, a hypothetical teleportation device. The assignment required creating a cohesive visual system that would position this science fiction concept as a credible and approachable consumer technology.</p>
+      <p>The assignment was to develop a complete brand identity for Portal, a fictional teleportation device. This hypothetical technology needed a visual system that would balance innovation with approachability, making the revolutionary concept feel both exciting and trustworthy.</p>
       
-      <p>Drawing inspiration from retro-futuristic aesthetics and space imagery, I crafted an identity system that balances the revolutionary nature of teleportation with human-centered design principles. The brand communicates Portal's core values: innovation, safety, accessibility, and global connectivity.</p>
+      <div class="mission-quote">
+        <p>"At 42, we stand at the forefront of a transformative era, introducing the world to our visionary teleportation technology – the Portal. Our mission is nothing short of revolutionizing global travel by breaking barriers and connecting people in ways previously unimaginable. We thrive on innovation, pushing the boundaries of what's possible in teleportation. Safety is our paramount concern, and our patented technology ensures that entities maintain their unique attributes during teleportation, offering an unparalleled and reliable experience."</p>
+      </div>
+    </section>
+
+    <section class="moodboard">
+      <h2>Visual Inspiration</h2>
+      <div class="moodboard-image">
+        <img src="/api/placeholder/800/600" alt="Retro-futuristic moodboard with sci-fi elements" />
+      </div>
     </section>
 
     <section class="case-study-section">
@@ -590,87 +752,35 @@
       </ol>
     </section>
 
-    <section class="case-study-section">
-      <div class="section-content">
-        <h2>Reflection & Learning</h2>
-        <p>This course project reinforced several important principles for conceptual technology branding:</p>
-        
-        <ul>
-          <li><strong>Balance Innovation with Familiarity:</strong> Groundbreaking concepts need grounding elements to be relatable</li>
-          <li><strong>Human Experience First:</strong> Even fictional technology should feel designed for people, not the other way around</li>
-          <li><strong>Visual Consistency:</strong> A unified visual language builds credibility across different applications</li>
-        </ul>
-      </div>
-      <div class="section-image">
-        <img src="/api/placeholder/400/320" alt="Process Sketches" />
-      </div>
-    </section></section>
-
-    <section class="results">
-      <h2>Results & Impact</h2>
-      <p>The Portal brand identity has been instrumental in the successful product launch and adoption phase.</p>
+    <!-- New Reflection/Learnings Section -->
+    <section class="reflection">
+      <h2>Reflection & Learnings</h2>
+      <p>This project taught me a lot about brand design for a hypothetical product. Here are my main takeaways:</p>
       
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-number">98%</div>
-          <div class="stat-label">Brand Recognition in Target Markets</div>
+      <div class="reflection-grid">
+        <div class="reflection-item">
+          <h3 class="reflection-title">Science Fiction vs. Reality</h3>
+          <p>I struggled with making a teleportation device seem believable. Using familiar design elements from tech companies helped ground the concept in reality, though I probably could have pushed the sci-fi elements further in some applications.</p>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">85%</div>
-          <div class="stat-label">Positive Sentiment in Public Discourse</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">3.5M</div>
-          <div class="stat-label">Portal Users in First Quarter</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">42%</div>
-          <div class="stat-label">Market Share Growth</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="case-study-section">
-      <div class="section-content">
-        <h2>Challenges & Solutions</h2>
-        <p>A significant challenge was addressing public concerns about teleportation safety. We tackled this through:</p>
         
-        <ul>
-          <li><strong>Transparent Communication:</strong> Clear explanations of safety protocols in all marketing materials</li>
-          <li><strong>Visual Reassurance:</strong> Design elements that evoke stability and reliability</li>
-          <li><strong>Human-Centered Stories:</strong> Campaign featuring real user experiences</li>
-        </ul>
+        <div class="reflection-item">
+          <h3 class="reflection-title">Consistency Challenges</h3>
+          <p>Maintaining visual consistency across different applications was harder than expected. The logo worked well at different sizes, but the starfield motif was difficult to adapt for smaller formats like business cards.</p>
+        </div>
         
-        <p>This approach successfully shifted public perception, with trust metrics increasing by 64% after the first campaign.</p>
-      </div>
-      <div class="section-image">
-        <img src="/api/placeholder/400/320" alt="Campaign Materials" />
-      </div>
-    </section>
-    
-    <section class="case-study-section">
-      <div class="section-content">
-        <h2>Key Learnings</h2>
-        <p>This project reinforced several crucial principles for emerging technology branding:</p>
+        <div class="reflection-item">
+          <h3 class="reflection-title">Typography Limitations</h3>
+          <p>I spent too much time trying to find the "perfect" retro-futuristic font. In a real project, I would have sketched custom letterforms or modified existing typefaces to better match the concept instead of relying on off-the-shelf fonts.</p>
+        </div>
         
-        <ul>
-          <li><strong>Balance Innovation with Familiarity:</strong> Groundbreaking concepts need grounding elements</li>
-          <li><strong>Human Experience First:</strong> Technology should feel designed for people, not the other way around</li>
-          <li><strong>Consistent Storytelling:</strong> A unified narrative across touchpoints builds trust and understanding</li>
-        </ul>
+        <div class="reflection-item">
+          <h3 class="reflection-title">Feedback From Class</h3>
+          <p>My classmates pointed out that the color scheme reads more "mystical" than "technological." If I were to revise this, I'd experiment with a more tech-forward palette using cooler blues instead of purple, and maybe dial back the gold accents.</p>
+        </div>
       </div>
-      <div class="section-image">
-        <img src="/api/placeholder/400/320" alt="Process Documentation" />
-      </div>
+      
+      <p>Overall, this exercise helped me understand how to create a cohesive identity system, even for something that doesn't exist. I'd like to explore more about how this brand would work in motion and interactive environments if I had more time.</p>
     </section>
-  </div>
-
-  <div class="footer">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <p>Naeema Mohammed Sageer, Creative Director</p>
-      <p>hello@portal.com | 555-555-5555</p>
-    </div>
   </div>
 
   <script>
@@ -731,12 +841,8 @@
         font-size: 1.1rem;
       }
       
-      .project-components {
-        margin-top: 2rem;
-      }
-      
       .conclusion {
-        margin: 6rem 0;
+        margin: 6rem 0 0;
         padding: 3rem;
         background-color: var(--primary-black);
         color: var(--primary-white);
@@ -751,24 +857,6 @@
     // Initialize animations
     document.addEventListener('DOMContentLoaded', () => {
       createStars();
-      
-      // Add some floating animation to the portal effect
-      const portalEffect = document.querySelector('.portal-effect');
-      if (portalEffect) {
-        portalEffect.style.animation = 'float 6s ease-in-out infinite';
-        
-        const floatKeyframes = `
-          @keyframes float {
-            0% { transform: translate(-50%, -50%); }
-            50% { transform: translate(-50%, -55%); }
-            100% { transform: translate(-50%, -50%); }
-          }
-        `;
-        
-        const floatStyle = document.createElement('style');
-        floatStyle.textContent = floatKeyframes;
-        document.head.appendChild(floatStyle);
-      }
       
       // Add star highlights to section headings
       const headings = document.querySelectorAll('h2');
