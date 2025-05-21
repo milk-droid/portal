@@ -118,13 +118,13 @@
     }
     
 /* Logo Display */
-/* Container removed as requested */
+/* No container styles at all */
 
 .logo-item {
   display: inline-block;
   text-align: center;
   margin: 2rem;
-  width: calc(50% - 4rem); /* Similar to previous flex: 1 1 40% */
+  width: calc(50% - 4rem);
   min-width: 300px;
   vertical-align: top;
 }
@@ -140,7 +140,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-/* Ensure logos aren't compressed */
 .logo-img img {
   max-width: 100%;
   max-height: 100%;
@@ -158,16 +157,8 @@
   text-align: center;
 }
 
-/* Add this if you want to maintain the spacing of the original layout */
-body > .logo-item:nth-child(odd) {
-  margin-right: 4%;
-}
-
-/* Optional - add this if you want the logo items to be centered on the page as a group */
+/* Center all logo items on the page */
 body {
-  text-align: center;
-}
-body > .logo-item {
   text-align: center;
 }
     
@@ -459,10 +450,6 @@ body > .logo-item {
         min-width: 250px;
       }
       
-      .logo-container {
-        gap: 1rem;
-      }
-      
       .application-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -611,30 +598,36 @@ body > .logo-item {
       <h2>Logo Design</h2>
       <p>The Portal logo embodies the essence of teleportation technology while maintaining a clean, recognizable form. The circular portal element with a human figure represents both the technological achievement and its human-centered purpose.</p>
       
-     <div class="logo-item">
-  <div class="logo-img">
-    <img src="primary.png" alt="Primary Logo" />
+     <!-- Remove this outer div -->
+<!-- <div class="logo-container"> -->
+
+  <div class="logo-item">
+    <div class="logo-img">
+      <img src="primary.png" alt="Primary Logo" />
+    </div>
+    <p class="logo-caption">Primary Logo</p>
   </div>
-  <p class="logo-caption">Primary Logo</p>
-</div>
-<div class="logo-item">
-  <div class="logo-img">
-    <img src="secondary.png" alt="Secondary Logo" />
+  <div class="logo-item">
+    <div class="logo-img">
+      <img src="secondary.png" alt="Secondary Logo" />
+    </div>
+    <p class="logo-caption">Secondary Logo</p>
   </div>
-  <p class="logo-caption">Secondary Logo</p>
-</div>
-<div class="logo-item">
-  <div class="logo-img">
-    <img src="submark.png" alt="Submark" />
+  <div class="logo-item">
+    <div class="logo-img">
+      <img src="submark.png" alt="Submark" />
+    </div>
+    <p class="logo-caption">Submark</p>
   </div>
-  <p class="logo-caption">Submark</p>
-</div>
-<div class="logo-item">
-  <div class="logo-img">
-    <img src="favicon.png" alt="Favicon" />
+  <div class="logo-item">
+    <div class="logo-img">
+      <img src="favicon.png" alt="Favicon" />
+    </div>
+    <p class="logo-caption">Favicon</p>
   </div>
-  <p class="logo-caption">Favicon</p>
-</div>
+
+<!-- Remove this closing div -->
+<!-- </div> -->
     </section>
 
     <section class="color-system">
