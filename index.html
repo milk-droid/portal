@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +32,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      text-align: center; /* Center all elements by default */
     }
     
     .container {
@@ -117,50 +117,23 @@
       margin-bottom: 2rem;
     }
     
-/* Logo Display */
-/* No container styles at all */
-
-.logo-item {
-  display: inline-block;
-  text-align: center;
-  margin: 2rem;
-  width: calc(50% - 4rem);
-  min-width: 300px;
-  vertical-align: top;
-}
-
-.logo-img {
-  background-color: var(--primary-black);
-  height: 200px;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.logo-img img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.logo-caption {
-  font-weight: bold;
-  color: var(--deep-purple);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-/* Center all logo items on the page */
-body {
-  text-align: center;
-}
+    /* Image Styling - New centralized image styling */
+    img {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .logo-caption {
+      font-weight: bold;
+      color: var(--deep-purple);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
     
     /* Color Palette */
     .color-palette {
@@ -220,27 +193,12 @@ body {
     /* Case Study Sections */
     .case-study-section {
       margin: 6rem 0;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 3rem;
+      text-align: left;
     }
     
+    /* Text alignment reset for content sections */
     .section-content {
-      flex: 1 1 60%;
-      min-width: 300px;
-    }
-    
-    .section-image {
-      flex: 1 1 30%;
-      min-width: 300px;
-      height: 300px;
-      background-color: var(--primary-black);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
+      text-align: left;
     }
     
     /* Applications Display */
@@ -255,21 +213,6 @@ body {
       margin-top: 2rem;
     }
     
-    .application-item {
-      border: none;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-      background-color: var(--primary-black);
-    }
-    
-    .application-img {
-      height: 250px;
-      background-color: var(--primary-black);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
     .application-caption {
       padding: 1.2rem;
       background-color: var(--primary-white);
@@ -278,6 +221,8 @@ body {
       text-transform: uppercase;
       letter-spacing: 0.05em;
       font-size: 0.9rem;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
     }
     
     /* Process Section */
@@ -316,6 +261,7 @@ body {
       border-left: 3px solid var(--gold);
       padding-left: 1.5rem;
       margin-bottom: 2rem;
+      text-align: left;
     }
     
     .reflection-title {
@@ -375,21 +321,14 @@ body {
       margin: 2rem 0 3rem;
       font-size: 0.95rem;
       line-height: 1.6;
+      text-align: left;
     }
     
-    .moodboard {
-      margin: 4rem 0;
-      text-align: center;
-    }
-    
-    .moodboard-image {
-      width: 100%;
-      max-height: 600px;
-      background-color: var(--primary-black);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 2rem;
+    /* Lists should be left-aligned */
+    ul, ol {
+      text-align: left;
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
     }
     
     .skills-grid {
@@ -402,6 +341,7 @@ body {
     .skill-item {
       border-left: 3px solid var(--gold);
       padding-left: 1rem;
+      text-align: left;
     }
     
     .skill-title {
@@ -426,15 +366,7 @@ body {
       }
       
       .case-study-section {
-        flex-direction: column;
         margin: 4rem 0;
-        gap: 2rem;
-      }
-      
-      .section-image {
-        order: -1;
-        height: 250px;
-        width: 100%;
       }
       
       .color-palette {
@@ -443,11 +375,6 @@ body {
       
       .color-info {
         margin: 0 1rem 2rem;
-      }
-      
-      .logo-item {
-        flex: 1 1 100%;
-        min-width: 250px;
       }
       
       .application-grid {
@@ -473,10 +400,6 @@ body {
         grid-template-columns: 1fr;
       }
       
-      .moodboard-image {
-        max-height: 450px;
-      }
-
       .reflection {
         padding: 1.5rem;
         margin: 4rem 0;
@@ -484,6 +407,10 @@ body {
       
       .reflection-grid {
         grid-template-columns: 1fr;
+      }
+      
+      img {
+        margin: 1.5rem auto;
       }
     }
     
@@ -517,10 +444,6 @@ body {
         font-size: 0.9rem;
       }
       
-      .logo-img {
-        height: 180px;
-      }
-      
       .color-block {
         width: 120px;
         height: 120px;
@@ -530,20 +453,16 @@ body {
         font-size: 1.5rem;
       }
       
-      .section-image {
-        height: 200px;
-      }
-      
-      .application-img {
-        height: 200px;
-      }
-      
       .skill-title {
         font-size: 1.1rem;
       }
 
       .reflection-title {
         font-size: 1.1rem;
+      }
+      
+      img {
+        margin: 1rem auto;
       }
     }
   </style>
@@ -552,9 +471,7 @@ body {
   <div class="header">
     <div class="header-stars" id="stars-container"></div>
     <div class="header-content">
-      <div class="logo-header">
-        <img src="portal_sl.png" alt="PORTAL™ Logo" style="max-width: 100%; height: auto;"/>
-      </div>
+      <img src="portal_sl.png" alt="PORTAL™ Logo" style="max-width: 80%; height: auto; margin: 0 auto;"/>
       <p>Brand Identity Design</p>
     </div>
   </div>
@@ -575,9 +492,7 @@ body {
 
     <section class="moodboard">
       <h2>Visual Inspiration</h2>
-      <div class="moodboard-image">
-        <img src="moodboard.png" alt="Retro-futuristic moodboard with sci-fi elements"  style="max-width: 80%; height: auto;"/>
-      </div>
+      <img src="moodboard.png" alt="Retro-futuristic moodboard with sci-fi elements" style="max-width: 80%; height: auto;"/>
     </section>
 
     <section class="case-study-section">
@@ -598,36 +513,18 @@ body {
       <h2>Logo Design</h2>
       <p>The Portal logo embodies the essence of teleportation technology while maintaining a clean, recognizable form. The circular portal element with a human figure represents both the technological achievement and its human-centered purpose.</p>
       
-     <!-- Remove this outer div -->
-<!-- <div class="logo-container"> -->
-
-  <div class="logo-item">
-    <div class="logo-img">
-      <img src="primary.png" alt="Primary Logo" />
-    </div>
-    <p class="logo-caption">Primary Logo</p>
-  </div>
-  <div class="logo-item">
-    <div class="logo-img">
-      <img src="secondary.png" alt="Secondary Logo" />
-    </div>
-    <p class="logo-caption">Secondary Logo</p>
-  </div>
-  <div class="logo-item">
-    <div class="logo-img">
-      <img src="submark.png" alt="Submark" />
-    </div>
-    <p class="logo-caption">Submark</p>
-  </div>
-  <div class="logo-item">
-    <div class="logo-img">
-      <img src="favicon.png" alt="Favicon" />
-    </div>
-    <p class="logo-caption">Favicon</p>
-  </div>
-
-<!-- Remove this closing div -->
-<!-- </div> -->
+      <!-- Logo images without containers -->
+      <img src="primary.png" alt="Primary Logo" style="max-width: 60%; height: auto;"/>
+      <p class="logo-caption">Primary Logo</p>
+      
+      <img src="secondary.png" alt="Secondary Logo" style="max-width: 60%; height: auto;"/>
+      <p class="logo-caption">Secondary Logo</p>
+      
+      <img src="submark.png" alt="Submark" style="max-width: 40%; height: auto;"/>
+      <p class="logo-caption">Submark</p>
+      
+      <img src="favicon.png" alt="Favicon" style="max-width: 20%; height: auto;"/>
+      <p class="logo-caption">Favicon</p>
     </section>
 
     <section class="color-system">
@@ -703,32 +600,17 @@ body {
       <h2>Brand Applications</h2>
       <p>The Portal identity was applied across various touchpoints to ensure consistency while allowing for creative expression.</p>
       
-      <div class="application-grid">
-        <div class="application-item">
-          <div class="application-img">
-            <img src="/api/placeholder/300/250" alt="Business Cards" />
-          </div>
-          <div class="application-caption">Business Cards</div>
-        </div>
-        <div class="application-item">
-          <div class="application-img">
-            <img src="/api/placeholder/300/250" alt="T-Shirt Design" />
-          </div>
-          <div class="application-caption">Merchandise</div>
-        </div>
-        <div class="application-item">
-          <div class="application-img">
-            <img src="/api/placeholder/300/250" alt="Marketing Poster" />
-          </div>
-          <div class="application-caption">Marketing Poster</div>
-        </div>
-        <div class="application-item">
-          <div class="application-img">
-            <img src="/api/placeholder/300/250" alt="Portal Terminal Interface" />
-          </div>
-          <div class="application-caption">Portal Terminal Interface</div>
-        </div>
-      </div>
+      <img src="/api/placeholder/300/250" alt="Business Cards" style="max-width: 60%; height: auto;"/>
+      <p class="application-caption">Business Cards</p>
+      
+      <img src="/api/placeholder/300/250" alt="T-Shirt Design" style="max-width: 60%; height: auto;"/>
+      <p class="application-caption">Merchandise</p>
+      
+      <img src="/api/placeholder/300/250" alt="Marketing Poster" style="max-width: 60%; height: auto;"/>
+      <p class="application-caption">Marketing Poster</p>
+      
+      <img src="/api/placeholder/300/250" alt="Portal Terminal Interface" style="max-width: 60%; height: auto;"/>
+      <p class="application-caption">Portal Terminal Interface</p>
     </section>
 
     <section class="case-study-section">
@@ -738,9 +620,7 @@ body {
         
         <p>The website and app interface concepts incorporate the retro-futuristic visual language while focusing on intuitive navigation and clear information architecture. I designed interactive elements with subtle animations that suggest teleportation, reinforcing the brand experience.</p>
       </div>
-      <div class="section-image">
-        <img src="/api/placeholder/400/320" alt="Digital Concept Mockups" />
-      </div>
+      <img src="/api/placeholder/400/320" alt="Digital Concept Mockups" style="max-width: 70%; height: auto;"/>
     </section>
 
     <section class="process">
